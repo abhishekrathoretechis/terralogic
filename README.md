@@ -1,79 +1,126 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Overview
 
-# Getting Started
+The terralogic Project is a React Native application that allows users to search for GitHub profiles. The application leverages Redux Toolkit for state management and integrates with the GitHub API to fetch and display user data. This project demonstrates core principles of React Native development, including unit testing, state management, and API integration.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Features
 
-## Step 1: Start the Metro Server
+Search for GitHub users by their login.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Display a list of users fetched from the GitHub API.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Error handling for API failures.
 
-```bash
-# using npm
-npm start
+Loading indicators for a seamless user experience.
 
-# OR using Yarn
-yarn start
-```
+Technologies Used
 
-## Step 2: Start your Application
+React Native: Framework for building cross-platform mobile applications.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Redux Toolkit: For efficient state management.
 
-### For Android
+React-Redux: Integration of Redux with React.
 
-```bash
-# using npm
-npm run android
+Redux Thunk: Middleware for handling asynchronous actions.
 
-# OR using Yarn
-yarn android
-```
+Jest and React Testing Library: For unit testing components.
 
-### For iOS
+File Structure
 
-```bash
-# using npm
-npm run ios
+src/
+├── components/
+│ ├── SearchComponent.js // Main component for the search feature
+│ ├── SearchComponent.test.js // Unit tests for SearchComponent
+├── redux/
+│ ├── slices/
+│ │ ├── searchSlice.js // Redux slice for managing search state
+│ ├── store.js // Store configuration
+└── App.js // Root component
 
-# OR using Yarn
-yarn ios
-```
+Installation
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+To run the project locally, follow these steps:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Clone the repository: git clone https://github.com/abhishekrathoretechis/terralogic
 
-## Step 3: Modifying your App
+git clone https://github.com/abhishekrathoretechis/terralogic
 
-Now that you have successfully run the app, let's modify it.
+Navigate to the project directory:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+cd terralogic
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+Install dependencies:
 
-## Congratulations! :tada:
+npm install
 
-You've successfully run and modified your React Native App. :partying_face:
+Run the app on an emulator or device:
 
-### Now what?
+npm run android # For Android
+npm run ios # For iOS
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+Running Tests
 
-# Troubleshooting
+To execute the unit tests for this project, run:
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+npm test
 
-# Learn More
+This will run all tests and display the results in the console.
 
-To learn more about React Native, take a look at the following resources:
+Usage
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Enter a GitHub username in the input field.
+
+Click the "Submit" button to fetch user data.
+
+View the results on the screen.
+
+Key Components
+
+SearchComponent.js
+
+Handles user input and dispatches actions to the Redux store.
+
+Displays loading states and error messages.
+
+Redux Slice (searchSlice.js)
+
+Defines the initial state, reducers, and asynchronous actions for searching GitHub users.
+
+Tests (SearchComponent.test.js)
+
+Ensures the component dispatches actions correctly.
+
+Verifies the integration between Redux state and the component.
+
+Troubleshooting
+
+Error: Cannot read properties of undefined (reading 'login'): Ensure the search slice in Redux has a properly defined initial state.
+
+Test Failing Due to Logger: Remove or mock the logger middleware in the store configuration.
+
+Contributing
+
+Fork the repository.
+
+Create a new branch:
+
+git checkout -b feature-name
+
+Commit your changes:
+
+git commit -m "Add feature-name"
+
+Push to the branch:
+
+git push origin feature-name
+
+Open a pull request.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Acknowledgments
+
+The GitHub API documentation: GitHub REST API
+
+Redux Toolkit documentation: Redux Toolkit
